@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Watch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 id="title"></h2>
+
+<div class="player">
+  <iframe id="player" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const videoId = params.get("v");
+  const title = params.get("title");
+
+  document.getElementById("title").innerText = title;
+  document.getElementById("player").src =
+    `https://www.youtube.com/embed/${videoId}`;
+</script>
+
+</body>
+</html>
